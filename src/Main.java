@@ -19,10 +19,13 @@ public class Main {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
         while ((str = in.readLine()) != null) {
-            if (str.equals(key))
+            if(str.length() == 0) // 공백 제거 후 줄 바꿈
+                continue;
+
+            if(str.equals(key)) // 설정 키 입력 시 while 문 빠져나옴
                 break;
 
-            if (i % k == 0) //
+            if(i % k == 0) // k 번째 줄 부터 공백 추가
                 copy += "\n";
 
             copy += str + "\n";
